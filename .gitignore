@@ -10,7 +10,7 @@ build/
 *.tsbuildinfo
 
 # 本地数据文件
-database.json
+# database.json
 database.json.backup
 *.db
 *.sqlite

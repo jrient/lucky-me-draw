@@ -73,8 +73,11 @@
     <!-- All Winners Sidebar -->
     <div class="sidebar" :class="{ open: showAllWinners }">
       <div class="sidebar-header">
-        <h2>🏆 荣誉榜</h2>
-        <button class="btn reset-btn" @click="resetData">重置所有</button>
+        <h2>🏆 获奖名单</h2>
+        <div class="sidebar-actions">
+          <button class="btn reset-btn" @click="resetData">重置所有</button>
+          <button class="btn close-btn" @click="toggleWinnerList" aria-label="关闭">×</button>
+        </div>
       </div>
       <div v-for="prize in settings.prizes" :key="prize.id" class="sidebar-section">
         <h3>{{ prize.name }}</h3>
@@ -430,6 +433,42 @@ onMounted(() => {
   background: #ff4d4d;
   color: white;
 }
+
+/* Sidebar actions container */
+.sidebar-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Close button in sidebar header */
+.close-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 4px 12px;
+  line-height: 1;
+  min-width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
 .sidebar-section {
     margin-bottom: 20px;
 }
