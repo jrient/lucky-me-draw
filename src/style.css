@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #d40000;
+  --gold-color: #ffd700;
+  --text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #8b0000; /* Fallback */
+  background: radial-gradient(circle, #b31217 0%, #590000 100%);
+  color: var(--text-color);
+  font-family: "Microsoft YaHei", sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Scrollbar hide */
+::-webkit-scrollbar {
+  display: none;
+}
