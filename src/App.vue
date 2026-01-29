@@ -245,6 +245,11 @@ const stopLottery = () => {
 const closeResult = () => {
     showResult.value = false;
     currentBatchWinners.value = [];
+
+    // 如果当前奖项已抽完，自动跳到下一项
+    if (remainingSlots.value <= 0 && prizeIndex.value < settings.value.prizes.length - 1) {
+        prizeIndex.value++;
+    }
 };
 
 const toggleWinnerList = () => {
